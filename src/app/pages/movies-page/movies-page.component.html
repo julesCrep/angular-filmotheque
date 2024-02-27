@@ -1,0 +1,7 @@
+<p>Je suis sur la route movies</p>
+
+<div *ngFor="let movie of movies">
+        {{ movie.title }}
+</div><br>
+
+<button (click)="callAPI()">Rafraichir film</button>
