@@ -5,3 +5,9 @@
 </div><br>
 
 <button (click)="callAPI()">Rafraichir film</button>
+
+<div class="fm-modal-wrapper" *ngIf="isLoading">
+        <div class="fm-modal-content">
+            Chargement en cours
+        </div>
+</div>

@@ -29,13 +29,18 @@ export class MoviesPageComponent {
     new Movie(2, "Sharknado"),
     new Movie(3, "Megalodon vs Octopus")
   ]
+
+  public isLoading : boolean = false;
   public constructor(private http : HttpClient){}
 
   public callAPI(){
     //TODO : Appeler le WS des films
+    this.isLoading = true;
+    
     this.http.get<Movie[]>("http://127.0.0.1:8080/api/v1/movies").subscribe(
       data => {
         this.movies = data;
+        this.isLoading = false;
       }
     );
 
